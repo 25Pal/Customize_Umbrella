@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Oswald:wght@200&family=Roboto:ital@0;1&family=Urbanist:wght@100&display=swap');
+
+
+:root{
+    --main-color :none;
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   transition: all .2s linear;
+   
+}
+
+.main{
+    min-height: 100vh;
+    background-color: var(--main-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+   
+
+}
+
+.class1 img{
+    max-width: 100%;
+    height: auto;
+    width: 30rem;
+   
+}
+
+.main .class2 h1{
+    color: rgb(10, 10, 10);
+    font-size: 2.8rem;
+}
+
+.class2 h3{
+
+    font-size: 1.6rem;
+}
+.class2 h5{
+    font-size: 1rem;
+}
+.class2 h6{
+    font-size: 0.8rem;
+}
+
+.class2 .clorswitch{
+    display: flex;
+    flex-wrap:wrap ;
+    justify-content: center;
+    gap:2rem;
+    padding-top: 1rem;
+}
+.class2 .clorswitch .theme-buttons{
+    display: block;
+    height: 27px;
+    width: 27px;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 0.5px rgb(68, 63, 63);
+}
+
+.combine-btn{
+   
+    display: flex;
+    align-items: center;
+    
+    gap: 1rem;
+    width: 100%;
+
+}
+
+.class2 label {
+    background-color: var(--main-color);
+    color: white;
+    font-weight: bold;
+    font-size: larger;
+    padding: 0.5rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 0.3rem;
+    cursor: pointer;
+  
+  }
+
+  .class2 .fileName{
+    padding-left: 5rem;
+  }
+
+  .class2 .upload-icon{
+   
+    top: 50%;
+    left: 10px;
+    height: 25px;
+    width: 25px;
+    fill: white;
+    filter: invert(100%);
+    cursor: pointer;
+   
+    
+  }
+
+  .class2 .loader_icon{
+    top: 50%;
+    left: 10px;
+    height: 25px;
+    width: 25px;
+    /* fill: white; */
+    /* filter: invert(100%); */
+    cursor: pointer;
+   
+    display: none;
+  }
+
+  .loader_icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: none;
+
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .combine-btn i{
+    
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+    fill: white;
+    filter: invert(100%);
+    padding-left: 5rem;
+    display: none;
+    
+  }
+  /* doooo */
+  .class1 .umbrella_loader_icon{
+    top: 50%;
+    left: 10px;
+    height: 60px;
+    width: 60px;
+    display: none;
+  }
+
+  .umbrella_loader_icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .umbrella-container {
+    position: relative;
+  }
+  
+  .logo-container {
+    position: absolute;
+    top: 92%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* display: none; */
+  }
+
+  .logo-container img {
+    height: 8rem; /* Specify the desired height */
+    width: 1rem; /* Let the width adjust automatically based on the height */
+    object-fit: contain;
+    image-rendering: crisp-edges; 
+}

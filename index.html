@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+   <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    
+    <div class="main" >
+        <div class="class1">
+            
+            <div class="umbrella-container">
+                <div class="umbrella-wrapper">
+                  <img src="Assest/Pink umbrella.png" alt="Pink-umbrella" class="umbrella pink" data-color="pink" style="display: none" />
+                  <img src="Assest/Blue umbrella.png" alt="Blue-umbrella" class="umbrella blue" data-color="blue" style="display: none" />
+                  <img src="Assest/Yello umbrella.png" alt="Yellow-umbrella" class="umbrella yellow" data-color="yellow" style="display: none" />
+                  <div class="logo-container">
+                    
+                  </div>
+                   <img src="Assest/loader_icon.svg" alt="Loader Icon" class="umbrella_loader_icon" data-color="pink" />
+                    <img src="Assest/loader_icon.svg" alt="Loader Icon" class="umbrella_loader_icon" data-color="blue" />
+                    <img src="Assest/loader_icon.svg" alt="Loader Icon" class="umbrella_loader_icon" data-color="yellow" />
+    
+                </div>
+                
+              </div>
+        </div>
+
+        <div class="class2">
+           <h1>Customize Umbrella</h1> 
+
+            <div class="colorlist">
+                <div class="clorswitch">
+                    <span class="theme-buttons" data-color="pink" style="background:#a60d64"></span>
+                    <span class="theme-buttons" data-color="blue" style="background:#128cb5"></span>
+                    <span class="theme-buttons" data-color="yellow" style="background:#f5b514"></span>
+                </div>
+            </div><br/>
+            
+
+            <h3>Customize your umbrella</h3>
+            <h5>Upload a logo for an instant preview.</h5>
+            <h6>.png and .jpg files only. Max file size is 5MB.</h6><br/>
+
+            <input type="file" id="actual-btn" hidden/>
+            <div class="combine-btn" id="combine-btn">
+
+                <label for="actual-btn" id="upload-btn">
+                    <img  src="Assest/upload_icon.svg" 
+                         alt="Upload Icon" class="upload-icon" 
+                    />
+                    <img src="Assest/loader_icon.svg" alt="Loader Icon"
+                        class="loader_icon"
+                    />
+                </label>
+                <label class="fileName"  id="fileName" >
+                    Upload File
+                </label>
+
+                <i id="close" class="fas fa-times close-icon" ></i>
+            </div>
+            
+        </div>
+       
+    </div>
+   
+    <script src="main.js"></script>
+    
+    
+</body>
+</html> 
