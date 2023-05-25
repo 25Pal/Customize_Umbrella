@@ -19,8 +19,8 @@
     background-color: var(--main-color);
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-   
+    justify-content: center;
+   gap: 7rem;
 
 }
 
@@ -29,6 +29,16 @@
     height: auto;
     width: 30rem;
    
+}
+.class2{
+  position: fixed;
+  left: 60%;
+  
+}
+
+.class1{
+  position: fixed;
+  left: 10%;
 }
 
 .main .class2 h1{
@@ -108,8 +118,8 @@
     left: 10px;
     height: 25px;
     width: 25px;
-    /* fill: white; */
-    /* filter: invert(100%); */
+    fill: white;
+    filter: invert(100%);
     cursor: pointer;
    
     display: none;
@@ -138,12 +148,13 @@
     cursor: pointer;
     fill: white;
     filter: invert(100%);
-    padding-left: 5rem;
+    padding-left: 4rem;
     display: none;
     
   }
   /* doooo */
   .class1 .umbrella_loader_icon{
+    
     top: 50%;
     left: 10px;
     height: 60px;
@@ -152,9 +163,11 @@
   }
 
   .umbrella_loader_icon {
+
     width: 80px;
     height: 80px;
     border-radius: 50%;
+    
   }
   @keyframes spin {
     0% {
