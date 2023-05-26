@@ -30,6 +30,10 @@ function showDefaultUmbrella() {
     changeBackgroundColor(color);
     // changeUmbrella(color);
 
+    // Reset the file input field
+    actualBtn.value = '';
+
+    fileLable.textContent = "Upload File";
 }
 
 
@@ -58,17 +62,17 @@ function changeUploadButtonColor(color) {
     uploadBtn.style.backgroundColor = colorMap[color];
     uploadTxt.style.backgroundColor = colorMap[color];
     uploadLogo.style.backgroundColor = colorMap[color];
-    
+
 
 }
 
 //loder colrs
 function changeLoderColor(color) {
-   const uploadButtonLoader = document.querySelector('.loader_icon');
-   const umbrellaLoader= document.querySelector('.umbrella_loader_icon');
+    const uploadButtonLoader = document.querySelector('.loader_icon');
+    const umbrellaLoader = document.querySelector('.umbrella_loader_icon');
 
-   uploadButtonLoader.style.fill=backgroundColors[color];
-   umbrellaLoader.style.fill=colorMap[color];
+    uploadButtonLoader.style.fill = backgroundColors[color];
+    umbrellaLoader.style.fill = colorMap[color];
 }
 //To change background color 
 
@@ -79,39 +83,39 @@ function changeBackgroundColor(color) {
 }
 
 // change umbrella with loader 
-function changeUmbrellaLoder(color){
+function changeUmbrellaLoder(color) {
 
     const umbrellas = umbrellaContainer.querySelectorAll('.umbrella');
-    
+
     umbrellas.forEach((umbrella) => {
         umbrella.style.display = 'none';
     });
-    const logocontainer= umbrellaContainer.querySelector('.logo-container');
-    logocontainer.style.display='none';
+    const logocontainer = umbrellaContainer.querySelector('.logo-container');
+    logocontainer.style.display = 'none';
     const selectedUmbrella = umbrellaContainer.querySelector(`.umbrella.${color}`);
-   
-    selectedUmbrella.style.display='none'
+
+    selectedUmbrella.style.display = 'none'
     const selectedLoader = umbrellaContainer.querySelector(`.umbrella_loader_icon[data-color="${color}"]`);
-   
+
     selectedLoader.style.display = 'inline-block';
     selectedLoader.style.animation = 'spin 2s linear infinite';
-     // Set the fill color to the desired color
-     selectedLoader.style.fill = colorMap[color];
-     
-     selectedLoader.style.filter = 'invert(100%)';
-    
-     
+    // Set the fill color to the desired color
+    selectedLoader.style.fill = colorMap[color];
+
+    selectedLoader.style.filter = 'invert(100%)';
+
+
     setTimeout(() => {
         umbrellas.forEach((umbrella) => {
             umbrella.style.display = 'none';
         });
-        
+
         selectedUmbrella.style.display = 'block';
-        logocontainer.style.display='block';
+        logocontainer.style.display = 'block';
         selectedLoader.style.display = 'none';
-        
-    }, 2000);
-    
+
+    }, 1000);
+
 }
 
 // Show loader icon and hide upload button
@@ -120,7 +124,7 @@ function showLoader() {
     uploadIcon.style.display = 'none';
     loaderIcon.style.display = 'inline-block';
     loaderIcon.style.animation = 'spin 2s linear infinite';
-    
+
 }
 
 // Hide loader icon and show upload button
@@ -128,17 +132,42 @@ function hideLoader() {
 
     const umbrellaImage = umbrellaContainer.querySelector('.umbrella');
     const umbrellaLoader = umbrellaContainer.querySelector('.umbrella_loader_icon');
-    const logocontainer= umbrellaContainer.querySelector('.logo-container');
+    const logocontainer = umbrellaContainer.querySelector('.logo-container');
 
     umbrellaLoader.style.display = 'none';
     umbrellaLoader.style.animation = '';
     umbrellaImage.style.display = 'block';
-    logocontainer.style.display='';
+    logocontainer.style.display = '';
 
 
     uploadIcon.style.display = 'flex';
     loaderIcon.style.display = 'none';
     loaderIcon.style.animation = '';
+
+}
+
+function showLoaderUmbrella() {
+    const umbrellaImage = umbrellaContainer.querySelector('.umbrella');
+    const umbrellaLoader = umbrellaContainer.querySelector('.umbrella_loader_icon');
+    const logocontainer = umbrellaContainer.querySelector('.logo-container');
+    umbrellaImage.style.display = 'none';
+    logocontainer.style.display = 'none';
+    umbrellaLoader.style.display = 'inline-block'
+    umbrellaLoader.style.animation = 'spin 2s linear infinite';
+
+}
+
+function hideLoaderUmbrella() {
+    const umbrellaImage = umbrellaContainer.querySelector('.umbrella');
+    const umbrellaLoader = umbrellaContainer.querySelector('.umbrella_loader_icon');
+    const logocontainer = umbrellaContainer.querySelector('.logo-container');
+    const logoImage = umbrellaContainer.querySelector('.logo-container');
+    logoImage.style.display = 'none';
+
+    umbrellaImage.style.display = 'block';
+    logocontainer.style.display = 'none';
+    umbrellaLoader.style.display = 'none'
+    umbrellaLoader.style.animation = '';
 
 }
 
@@ -148,33 +177,31 @@ actualBtn.addEventListener('change', function () {
     const file = this.files[0];
 
     if (file) {
-       
-        setTimeout(()=>{
-         
-            fileLable.textContent = file.name;
-            
-            const show = document.getElementById('close');
-          
-            show.style.display='inline-block'
-            // show.style.fill= 'white';
-            
-           
-
-        },3000)
-        
-        // Hide the umbrella image for 5 seconds
-        const umbrellaImage = umbrellaContainer.querySelector('.umbrella');
-        
-        const umbrellaLoader = umbrellaContainer.querySelector('.umbrella_loader_icon');
-        const logocontainer= umbrellaContainer.querySelector('.logo-container');
-        umbrellaImage.style.display = 'none';
-        logocontainer.style.display='none';
-        umbrellaLoader.style.display = 'inline-block'
-        umbrellaLoader.style.animation = 'spin 2s linear infinite';
-
         // changeLoderColor(color);
 
         showLoader();
+
+        // Hide the umbrella image for 5 seconds
+        showLoaderUmbrella()
+
+        // const umbrellaImage = umbrellaContainer.querySelector('.umbrella');
+
+        // const umbrellaLoader = umbrellaContainer.querySelector('.umbrella_loader_icon');
+        // const logocontainer = umbrellaContainer.querySelector('.logo-container');
+        // umbrellaImage.style.display = 'none';
+        // logocontainer.style.display = 'none';
+        // umbrellaLoader.style.display = 'inline-block'
+        // umbrellaLoader.style.animation = 'spin 2s linear infinite';
+
+        setTimeout(() => {
+
+            fileLable.textContent = file.name;
+
+            const show = document.getElementById('close');
+
+            show.style.display = 'inline-block'
+
+        }, 3000)
 
         // Simulate image processing delay (replace this with your actual processing logic)
         setTimeout(() => {
@@ -212,48 +239,23 @@ function processImage(file) {
     hideLoader();
 }
 
-function showLoaderUmbrella (){
-    const umbrellaImage = umbrellaContainer.querySelector('.umbrella');
-        const umbrellaLoader = umbrellaContainer.querySelector('.umbrella_loader_icon');
-        const logocontainer= umbrellaContainer.querySelector('.logo-container');
-        umbrellaImage.style.display = 'none';
-        logocontainer.style.display='none';
-        umbrellaLoader.style.display = 'inline-block'
-        umbrellaLoader.style.animation = 'spin 2s linear infinite';
-
-}
-
-function hideLoaderUmbrella (){
-    const umbrellaImage = umbrellaContainer.querySelector('.umbrella');
-        const umbrellaLoader = umbrellaContainer.querySelector('.umbrella_loader_icon');
-        const logocontainer= umbrellaContainer.querySelector('.logo-container');
-        const logoImage = umbrellaContainer.querySelector('.logo-container');
-        logoImage.style.display = 'none';
-        
-        umbrellaImage.style.display = 'block';
-        logocontainer.style.display='none';
-        umbrellaLoader.style.display = 'none'
-        umbrellaLoader.style.animation = '';
-
-}
-
 //^^^^^^^^^ Close Button ^^^^^^^^^^^^^^\\
 closeBtn.addEventListener('click', function () {
-    showLoaderUmbrella ();
-    
-    setTimeout(()=>{
+    showLoaderUmbrella();
+
+    setTimeout(() => {
         hideLoaderUmbrella();
-    },1000)
+    }, 1000)
 
     // Reset the file input field
-    actualBtn.value = ''; 
+    actualBtn.value = '';
 
     fileLable.textContent = "Upload File";
     const show = document.getElementById('close');
-    show.style.display='none';
+    show.style.display = 'none';
     const logoImage = umbrellaContainer.querySelector('.logo-container');
     logoImage.style.display = 'none';
-    
+
 });
 
 //^^^^^^^^^ Umbrella image ^^^^^^^^^^^^^^\\
@@ -266,21 +268,21 @@ colorBtn.forEach((btn) => {
         const umbrellas = umbrellaContainer.querySelectorAll(`.umbrella.${selectedColor}`);
 
         umbrellas.forEach((umbrella) => {
-            
-        umbrella.style.display = 'block';
+
+            umbrella.style.display = 'block';
         });
 
         const otherUmbrellas = umbrellaContainer.querySelectorAll(`.umbrella:not(.${selectedColor})`);
-        
+
         otherUmbrellas.forEach((umbrella) => {
             umbrella.style.display = 'none';
-            
+
         });
-        
+
         changeUmbrellaLoder(selectedColor);
-       changeUploadButtonColor(selectedColor);
+        changeUploadButtonColor(selectedColor);
         changeBackgroundColor(selectedColor);
-        
+
 
     });
-});
+}); 

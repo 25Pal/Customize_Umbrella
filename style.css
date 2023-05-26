@@ -16,7 +16,6 @@
 
 .main{
     min-height: 100vh;
-    background-color: var(--main-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -43,7 +42,7 @@
 
 .main .class2 h1{
     color: rgb(10, 10, 10);
-    font-size: 2.8rem;
+    font-size: 3.8rem;
 }
 
 .class2 h3{
@@ -152,7 +151,7 @@
     display: none;
     
   }
-  /* doooo */
+ 
   .class1 .umbrella_loader_icon{
     
     top: 50%;
@@ -167,7 +166,7 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    
+    display: none;
   }
   @keyframes spin {
     0% {
@@ -187,12 +186,12 @@
     top: 92%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* display: none; */
+    
   }
 
   .logo-container img {
-    height: 8rem; /* Specify the desired height */
-    width: 1rem; /* Let the width adjust automatically based on the height */
+    height: 8rem; 
+    width: 1rem; 
     object-fit: contain;
     image-rendering: crisp-edges; 
 }
